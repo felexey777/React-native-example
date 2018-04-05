@@ -6,7 +6,6 @@ import {
 }
 from 'react-native';
 import { PersistGate } from 'redux-persist/es/integration/react';
-import AppWithNavigationState from './Components/AppWithNavigationState';
 import createStore from './Redux';
 import AppNavigator from './Navigators/AppNavigator';
 
@@ -27,7 +26,6 @@ class App extends React.Component {
           persistor={persistor}
         >
           <StatusBar backgroundColor={'black'} />
-          {/* <AppWithNavigationState /> */}
           <AppNavigator />
         </PersistGate>
       </Provider>

@@ -17,7 +17,6 @@ import mySaga from '../Sagas';
 import { userReducer } from './UserRedux';
 import { settingReducer } from './SettingRedux';
 import { sseChannelReducer } from './SseChannelRedux';
-import { navReducer } from './NavigationRedux';
 
 
 export default () => {
@@ -30,7 +29,6 @@ export default () => {
  };
   /* ------------- Assemble The Reducers ------------- */
   const persistedReducer = persistCombineReducers(config, {
-    nav: navReducer,
     user: userReducer,
     setting: settingReducer,
     sseChannel: sseChannelReducer,

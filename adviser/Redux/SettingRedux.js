@@ -15,7 +15,8 @@ export default Creators;
 
 /* ------------- Initial State ------------- */
 const INITIAL_STATE = Immutable({
-    userName: 'TEST',
+    userName: 'Nika',
+    endPoint: 'http://127.0.0.1:1986/'
 });
 
 /* ------------- Reducers ------------- */
