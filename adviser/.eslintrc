@@ -1,0 +1,14 @@
+{
+  "extends": "rallycoding",
+  "globals": { "fetch": false },
+  "rules": {
+    "arrow-body-style": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".ios.js", ".android.js"]
+      }
+    }
+  }
+}
