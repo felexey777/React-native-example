@@ -17,9 +17,17 @@ Deployment
 
 
 npm install -g react-native-cli
+
+
 cd {{PROJECT}}
+
+
 npm install
+
+
 react-native link
+
+
 react-native run-ios[run-android]
 
 
@@ -29,12 +37,3 @@ Built With
 
 
 ReactNative - React Native command line interface
-
-
-
-
-
-
-
-
-
