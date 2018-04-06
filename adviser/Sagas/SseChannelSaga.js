@@ -47,3 +47,30 @@ export function* closeCommSseChannel(action) {
     this.commSagaChannel = null;
   }
 }
+
+export function* simulateSSE() {
+  this.simSseChannel = channel();
+  const advices = ['be happy', 'don\'t worry', 'smile', 'feel good',
+   'why can\'t', 'you are pretty good', 'go!', 'don\'t stop!', 'take it',
+   'don\'t take it', 'be good', 'ask me', 'go home!', 'ask him', 'take her'
+ ];
+
+  this.interval = setInterval(() => {
+    const number = Math.round(Math.random() * (advices.length - 1));
+    console.log(advices[number]);
+    this.simSseChannel.put({
+      type: 'SET_ADVISER_DATA',
+      data: { adviserData: [advices[number]],
+     } });
+  }, 1000);
+  while (this.simSseChannel) {
+    const channelAction = yield take(this.simSseChannel);
+    // console.log(channelAction);
+    yield put(channelAction);
+  }
+}
+export function* turnOffSse() {
+  clearInterval(this.interval);
+  this.simSseChannel = null;
+  yield select();
+}

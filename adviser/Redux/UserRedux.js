@@ -14,7 +14,7 @@ export default Creators;
 /* ------------- Initial State ------------- */
 
 const INITIAL_STATE = Immutable({
-  adviserData: ['be good', 'ok', 'be happy'],
+  adviserData: [],
 });
 
 /* ------------- Reducers ------------- */
@@ -26,7 +26,7 @@ const INITIAL_STATE = Immutable({
 
  const setAdviserData = (state, action) => {
   return state.merge({
-    adviserData: state.adviserData.push(action.data.adviserData),
+    adviserData: action.data.adviserData,
    });
 };
 

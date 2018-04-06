@@ -7,6 +7,8 @@ import Immutable from 'seamless-immutable';
 const { Types, Creators } = createActions({
   openCommSseChannel: ['data'],
   openCommCameraChannel: ['data'],
+  simulateSse: ['data'],
+  turnOffSse: ['data'],
   closeCameraSseChannel: null,
   closeCommSseChannel: null,
 
@@ -35,6 +37,12 @@ const closeCameraSseChannel = (state) => {
 const closeCommSseChannel = (state) => {
   return state;
 };
+const simulateSSE = state => {
+  return state;
+};
+const turnOffSse = state => {
+  return state;
+};
 
 
 /* ------------- Hookup Reducers To Types ------------- */
@@ -44,4 +52,6 @@ export const sseChannelReducer = createReducer(INITIAL_STATE, {
   [Types.OPEN_COMM_CAMERA_CHANNEL]: (openCommCameraChannel),
   [Types.CLOSE_CAMERA_SSE_CHANNEL]: (closeCameraSseChannel),
   [Types.CLOSE_COMM_SSE_CHANNEL]: (closeCommSseChannel),
+  [Types.SIMULATE_SSE]: (simulateSSE),
+  [Types.TURN_OFF_SSE]: (turnOffSse),
 });

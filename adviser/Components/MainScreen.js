@@ -7,7 +7,7 @@ import {
 }
 from 'react-native';
 import { connect } from 'react-redux';
-import UserActions from '../Redux/UserRedux';
+import SseChennelActions from '../Redux/SseChannelRedux';
 
 
 @connect(
@@ -16,13 +16,17 @@ import UserActions from '../Redux/UserRedux';
     adviserData: state.user.adviserData
   }),
   dispatch => ({
-    logout: (data) => dispatch(UserActions.logout(data)),
+    simulateSse: (data) => dispatch(SseChennelActions.simulateSse(data)),
+    turnOffSse: (data) => dispatch(SseChennelActions.turnOffSse(data)),
   }))
 
 
 export default class MainScreen extends Component {
   componentDidMount = () => {
-
+    this.props.simulateSse();
+  }
+  componentWillUnmount = () => {
+    this.props.turnOffSse();
   }
 
   render() {
