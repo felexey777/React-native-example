@@ -41,3 +41,7 @@ tsconfig.json
 }
 run command
 npm i --save eslint-config-rallycoding
+
+Useful link: 
+-https://redux-saga.js.org/
+-https://github.com/rt2zz/redux-persist
