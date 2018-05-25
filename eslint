@@ -1,0 +1,43 @@
+Plagin==>
+
+linter
+linter-eslint
+minimap
+minimap-linter
+linter-ui-default
+language-babel
+PlatformIO IDE Terminal
+
+
+add files to root ==> 
+.eslintrc
+{
+  "extends": "rallycoding",
+  "globals": { "fetch": false },
+  "rules": {
+    "arrow-body-style": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".ios.js", ".android.js"]
+      }
+    }
+  }
+}
+.jshintrc
+{
+  "esversion": 6
+}
+tsconfig.json
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
+run command
+npm i --save eslint-config-rallycoding
